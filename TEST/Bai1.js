@@ -34,18 +34,17 @@ function tinhSoLong(m) {
       return each.long + 2;
     });
     const conNhieuLongNhat = Math.max.apply(Math, listLong);
+    soLongCatduoc = soLongCatduoc + (conNhieuLongNhat - 1);
 
     danCuu.forEach((each) => {
-      if (each.long === conNhieuLongNhat) {
+      if (each.long === conNhieuLongNhat - 2) {
         each.long = 1;
       } else {
         each.long += 2;
       }
     });
-
-    console.log(danCuu);
   }
+  console.log(soLongCatduoc);
 }
-console.log(soLongCatduoc);
 
 tinhSoLong(4);
